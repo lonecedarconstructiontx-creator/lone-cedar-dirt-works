@@ -372,6 +372,12 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   background: #4a7c3f;
   color: #fff;
 }
+.areas-list span {
+  transition: opacity .2s;
+}
+.areas-list span.dimmed {
+  opacity: 0.25;
+}
 
 #areas .section-sub { margin: 0 auto 0; }
 
