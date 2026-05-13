@@ -346,9 +346,9 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
   gap: 28px;
   margin-top: 36px;
 }
-#houston-map {
+.service-map-img {
   width: 100%;
-  max-width: 620px;
+  max-width: 720px;
   height: auto;
   border-radius: 8px;
 }

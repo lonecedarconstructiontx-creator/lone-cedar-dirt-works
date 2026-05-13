@@ -28,7 +28,7 @@
       "postalCode": "77445",
       "addressCountry": "US"
     },
-    "areaServed": ["Hempstead","Waller","Katy","Cypress","Brookshire","Magnolia","Tomball","Prairie View"],
+    "areaServed": ["Hempstead","Waller","Prairie View","Brookshire","Navasota","Katy","Cypress","Tomball","Spring","The Woodlands","Magnolia","Memorial","Sugar Land"],
     "priceRange": "$$",
     "openingHours": "Mo-Su 06:00-21:00"
   }
@@ -144,90 +144,25 @@
       <p class="section-sub">Based in Hempstead. Serving anywhere within 40 miles.</p>
 
       <div class="map-wrap">
-        <svg id="houston-map" viewBox="0 0 620 500" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .county { stroke:#6B5B4E; stroke-width:1.2; transition:fill .2s; }
-            .county-service { fill:#9E8060; }
-            .county-context { fill:#C8B99A; }
-            .county-service.active { fill:#4a7c3f; }
-            .city-dot { fill:#4a2c1a; stroke:#fff; stroke-width:1.2; transition:fill .2s; }
-            .city-group.active .city-dot { fill:#4a7c3f; }
-            .city-lbl { font-family:sans-serif; font-size:10px; fill:#2e1a0e; pointer-events:none; }
-            .city-group.active .city-lbl { fill:#2a5220; font-weight:700; }
-          </style>
-          <path id="county-waller" class="county county-service" d="M 181.9,213.0 L 293.5,213.0 L 293.5,287.0 L 181.9,287.0 Z"/>
-          <path id="county-harris" class="county county-service" d="M 293.5,202.2 L 485.7,202.2 L 485.7,282.6 L 438.1,343.5 L 367.9,358.7 L 293.5,358.7 Z"/>
-          <path id="county-montgomery" class="county county-service" d="M 266.6,93.5 L 454.7,93.5 L 454.7,202.2 L 293.5,202.2 L 266.6,202.2 Z"/>
-          <path id="county-grimes" class="county county-service" d="M 161.2,82.6 L 293.5,82.6 L 293.5,213.0 L 181.9,213.0 L 161.2,213.0 Z"/>
-          <path class="county county-context" d="M 107.5,213.0 L 181.9,213.0 L 181.9,287.0 L 107.5,287.0 Z"/>
-          <path class="county county-context" d="M 86.8,141.3 L 161.2,141.3 L 161.2,213.0 L 86.8,213.0 Z"/>
-          <path class="county county-context" d="M 134.3,21.7 L 243.9,21.7 L 243.9,82.6 L 161.2,82.6 L 161.2,141.3 L 86.8,141.3 L 86.8,82.6 Z"/>
-          <path class="county county-context" d="M 243.9,21.7 L 293.5,21.7 L 293.5,82.6 L 243.9,82.6 Z"/>
-          <path class="county county-context" d="M 266.6,54.3 L 372.0,54.3 L 372.0,93.5 L 266.6,93.5 Z"/>
-          <path class="county county-context" d="M 372.0,93.5 L 485.7,93.5 L 485.7,202.2 L 372.0,202.2 Z"/>
-          <path class="county county-context" d="M 485.7,126.1 L 558.0,126.1 L 558.0,282.6 L 485.7,282.6 Z"/>
-          <path class="county county-context" d="M 485.7,282.6 L 558.0,282.6 L 558.0,343.5 L 485.7,343.5 Z"/>
-          <path class="county county-context" d="M 438.1,343.5 L 485.7,282.6 L 485.7,343.5 L 537.3,413.0 L 496.0,456.5 L 438.1,456.5 Z"/>
-          <path class="county county-context" d="M 293.5,358.7 L 438.1,358.7 L 438.1,456.5 L 293.5,456.5 Z"/>
-          <path class="county county-context" d="M 293.5,287.0 L 403.0,287.0 L 403.0,391.3 L 293.5,391.3 Z"/>
-          <path class="county county-context" d="M 107.5,287.0 L 181.9,287.0 L 181.9,391.3 L 107.5,391.3 Z"/>
-          <path class="county county-context" d="M 181.9,391.3 L 293.5,391.3 L 293.5,478.3 L 181.9,478.3 Z"/>
-          <g class="city-group" data-county="waller" data-city="Hempstead"><circle cx="231.9" cy="217.8" r="5" class="city-dot"/><text x="239.9" y="221.8" class="city-lbl">Hempstead</text></g>
-          <g class="city-group" data-county="waller" data-city="Waller"><circle cx="263.1" cy="226.7" r="5" class="city-dot"/><text x="271.1" y="230.7" class="city-lbl">Waller</text></g>
-          <g class="city-group" data-county="harris" data-city="Katy"><circle cx="284.2" cy="285.9" r="5" class="city-dot"/><text x="292.2" y="289.9" class="city-lbl">Katy</text></g>
-          <g class="city-group" data-county="harris" data-city="Cypress"><circle cx="310.0" cy="245.7" r="5" class="city-dot"/><text x="318.0" y="249.7" class="city-lbl">Cypress</text></g>
-          <g class="city-group" data-county="waller" data-city="Brookshire"><circle cx="258.3" cy="286.3" r="5" class="city-dot"/><text x="266.3" y="290.3" class="city-lbl">Brookshire</text></g>
-          <g class="city-group" data-county="montgomery" data-city="Magnolia"><circle cx="299.5" cy="193.7" r="5" class="city-dot"/><text x="307.5" y="197.7" class="city-lbl">Magnolia</text></g>
-          <g class="city-group" data-county="harris" data-city="Tomball"><circle cx="327.4" cy="218.0" r="5" class="city-dot"/><text x="335.4" y="222.0" class="city-lbl">Tomball</text></g>
-          <g class="city-group" data-county="waller" data-city="Prairie View"><circle cx="250.7" cy="219.3" r="5" class="city-dot"/><text x="258.7" y="223.3" class="city-lbl">Prairie View</text></g>
-          <g class="city-group" data-county="grimes" data-city="Navasota"><circle cx="230.4" cy="154.6" r="5" class="city-dot"/><text x="238.4" y="158.6" class="city-lbl">Navasota</text></g>
-        </svg>
-
-        <div class="areas-list" id="areas-list">
-          <span class="area-tag map-area" data-county="waller" data-city="Hempstead">Hempstead</span>
-          <span class="area-tag map-area" data-county="waller" data-city="Waller">Waller</span>
-          <span class="area-tag map-area" data-county="harris" data-city="Katy">Katy</span>
-          <span class="area-tag map-area" data-county="harris" data-city="Cypress">Cypress</span>
-          <span class="area-tag map-area" data-county="waller" data-city="Brookshire">Brookshire</span>
-          <span class="area-tag map-area" data-county="montgomery" data-city="Magnolia">Magnolia</span>
-          <span class="area-tag map-area" data-county="harris" data-city="Tomball">Tomball</span>
-          <span class="area-tag map-area" data-county="waller" data-city="Prairie View">Prairie View</span>
-          <span class="area-tag map-area" data-county="grimes" data-city="Navasota">Navasota</span>
+        <img src="images/service-area-map.png" alt="Lone Cedar service area map — greater Houston" class="service-map-img">
+        <div class="areas-list">
+          <span class="area-tag">Hempstead</span>
+          <span class="area-tag">Waller</span>
+          <span class="area-tag">Prairie View</span>
+          <span class="area-tag">Brookshire</span>
+          <span class="area-tag">Navasota</span>
+          <span class="area-tag">Katy</span>
+          <span class="area-tag">Cypress</span>
+          <span class="area-tag">Tomball</span>
+          <span class="area-tag">Spring</span>
+          <span class="area-tag">The Woodlands</span>
+          <span class="area-tag">Magnolia</span>
+          <span class="area-tag">Memorial</span>
+          <span class="area-tag">Sugar Land</span>
         </div>
       </div>
     </div>
   </section>
-
-  <script>
-    (function() {
-      var tags   = document.querySelectorAll('.map-area');
-      var groups = document.querySelectorAll('.city-group');
-      var cPaths = document.querySelectorAll('.county-service');
-
-      function clearAll() {
-        tags.forEach(function(t)  { t.classList.remove('active'); });
-        groups.forEach(function(g) { g.classList.remove('active'); });
-        cPaths.forEach(function(p) { p.classList.remove('active'); });
-      }
-
-      function activate(countyId) {
-        clearAll();
-        var cp = document.getElementById('county-' + countyId);
-        if (cp) cp.classList.add('active');
-        groups.forEach(function(g) {
-          if (g.dataset.county === countyId) g.classList.add('active');
-        });
-        tags.forEach(function(t) {
-          if (t.dataset.county === countyId) t.classList.add('active');
-        });
-      }
-
-      tags.forEach(function(tag) {
-        tag.addEventListener('mouseenter', function() { activate(tag.dataset.county); });
-        tag.addEventListener('mouseleave', clearAll);
-      });
-    })();
-  </script>
 
   <!-- CONTACT -->
   <section id="contact" class="section section-contact">
