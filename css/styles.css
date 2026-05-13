@@ -339,25 +339,41 @@ h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 16px; }
 
 /* ---- AREAS ---- */
 #areas { text-align: center; }
+.map-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+}
+#houston-map {
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  border-radius: 8px;
+}
 .areas-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 36px;
 }
-.areas-list span {
-  padding: 12px 28px;
+.area-tag {
+  padding: 10px 24px;
   background: var(--sand);
   border-radius: 50px;
   font-weight: 500;
   font-size: 0.95rem;
   color: var(--charcoal);
-  transition: background 0.2s;
+  cursor: default;
+  transition: background 0.2s, color 0.2s;
 }
-.areas-list span:hover { background: #ede8dd; }
+.area-tag.active {
+  background: #4a7c3f;
+  color: #fff;
+}
 
-#areas .section-sub { margin: 0 auto; }
+#areas .section-sub { margin: 0 auto 0; }
 
 /* ---- CONTACT ---- */
 .section-contact {
